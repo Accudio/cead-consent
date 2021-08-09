@@ -1,0 +1,83 @@
+$colours: (
+  'bg': var(--cead-bg, rgb(47, 17, 33)),
+  'text': var(--cead-text, #fff),
+  'btn': var(--cead-btn, rgb(255, 157, 96))
+) !default;
+$breakpoint: 38rem;
+
+.cead {
+  display: none;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  z-index: 10;
+
+  border: 1px solid transparent;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, .5);
+
+  width: 100%;
+
+  padding: 1rem 1rem m#{a}x(.5rem, env(safe-area-inset-bottom, 0));
+
+  background: map-get($colours, 'bg');
+  color: map-get($colours, 'text');
+
+  font-size: .88rem;
+
+  @media screen and (min-width: $breakpoint) {
+    bottom: 1rem;
+    left: 1rem;
+
+    border-radius: .25rem;
+
+    width: 18rem;
+    max-width: calc(100vh - 2rem);
+
+    padding: 1rem;
+
+    font-size: 1rem;
+  }
+
+  // show popup
+  &[data-show="true"] {
+    display: block;
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: flex-end;
+
+    margin-top: .5rem;
+
+    @media screen and (min-width: $breakpoint) {
+      margin-top: 1rem;
+    }
+
+    > * {
+      margin-left: .5rem;
+    }
+  }
+
+  &__btn {
+    border-radius: .25rem;
+    padding: .35rem .5rem;
+
+    border: 0;
+    background: transparent;
+    color: currentColor;
+
+    cursor: pointer;
+    font-weight: bolder;
+
+    &--decline {
+      text-decoration: underline;
+    }
+
+    &--accept {
+      background: map-get($colours, 'btn');
+      color: map-get($colours, 'bg');
+    }
+  }
+}

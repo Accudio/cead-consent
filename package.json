@@ -1,0 +1,35 @@
+{
+  "name": "cead-consent",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf ./dist",
+    "compile": "run-p compile:*",
+    "compile:js": "cross-env NODE_ENV=development gulp js",
+    "compile:css": "cross-env NODE_ENV=development gulp css",
+    "build": "run-p build:*",
+    "build:js": "cross-env NODE_ENV=production gulp js",
+    "build:css": "cross-env NODE_ENV=production gulp css",
+    "watch": "cross-env NODE_ENV=development gulp watch",
+    "dev": "run-s clean compile watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.3.1",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.12.19",
+    "gulp": "^4.0.2",
+    "gulp-csso": "^4.0.1",
+    "gulp-esbuild": "^0.8.5",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sass": "^5.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.3.6",
+    "rimraf": "^3.0.2",
+    "sass": "^1.37.5"
+  }
+}
