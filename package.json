@@ -1,8 +1,15 @@
 {
   "name": "cead-consent",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.1.0",
+  "description": "A simple, extremely lightweight cookie and tracking consent manager",
+  "main": "dist/module.js",
+  "browser": "dist/browser.js",
+  "keywords": ["cookie", "consent", "gdpr", "compliance", "ccpa", "privacy"],
+  "author": "Alistair Shepherd <alistair@accudio.com>",
+  "license": "MPL-2.0",
+  "repository": "github:Accudio/cead-consent",
+  "bugs": "https://github.com/Accudio/cead-consent/issues",
+  "homepage": "https://github.com/Accudio/cead-consent#readme",
   "scripts": {
     "clean": "rimraf ./dist",
     "compile": "run-p compile:*",
@@ -14,9 +21,6 @@
     "watch": "cross-env NODE_ENV=development gulp watch",
     "dev": "run-s clean compile watch"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "autoprefixer": "^10.3.1",
     "cross-env": "^7.0.3",
