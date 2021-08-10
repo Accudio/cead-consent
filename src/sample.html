@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Document</title>
+
+  <!-- inline tracking script -->
+  <script type="text/plain" data-caed>
+    console.log('inline tracking script');
+  </script>
+
+  <!-- external tracking script -->
+  <script data-src="https://example.com/tracking.js" data-caed></script>
+</head>
+<body>
+  <!-- image tracking pixel -->
+  <img data-src="https://example.com/tracking.jpg" data-caed alt="" class="display:none">
+
+  <!-- if you use a skip link it will go here -->
+
+  <!-- cead consent mananger after skip link -->
+  <div class="cead" role="region" aria-label="Cookie consent">
+    <p>Hi! Could we please enable some services and cookies to improve your experience and our website?</p>
+
+    <div class="cead__btns">
+      <button class="cead__btn cead__btn--decline">No, thanks.</button>
+      <button class="cead__btn cead__btn--accept">Okay!</button>
+    </div>
+  </div>
+
+  <!-- your page content-->
+  <main></main>
+
+  <!-- including browser package (simple) -->
+  <script>
+    window.caed = {
+      cookieName: 'consent'
+    };
+  </script>
+  <script src="dist/browser.js"></script>
+
+  <!-- importing using ES6 module (advanced) -->
+  <script type="module">
+    import Caed from 'dist/module.js';
+    new Caed({
+      cookieName: 'consent'
+    });
+  </script>
+</body>
+</html>
