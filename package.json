@@ -6,7 +6,7 @@
   "browser": "dist/browser.js",
   "keywords": ["cookie", "consent", "gdpr", "compliance", "ccpa", "privacy"],
   "author": "Alistair Shepherd <alistair@accudio.com>",
-  "license": "MPL-2.0",
+  "license": "Apache-2.0",
   "repository": "github:Accudio/cead-consent",
   "bugs": "https://github.com/Accudio/cead-consent/issues",
   "homepage": "https://github.com/Accudio/cead-consent#readme",
