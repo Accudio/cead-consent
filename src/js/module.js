@@ -47,19 +47,21 @@ class Cead {
       }
     }
 
-    // on click of accept button, close consent manager, return focus if applicable and activate tracking
+    // on click of accept button, close consent manager, return focus if applicable, set cookie and activate tracking
     const acceptBtn = document.querySelector('.cead__btn--accept')
     if (acceptBtn) acceptBtn.addEventListener('click', () => {
       this.el.removeAttribute('data-show')
       if (this.focus) this.focus.focus()
+      this.setCookie(true)
       this.activate()
     })
 
-    // on click of decline button, close consent manager, return focus if applicable and remove cookies
+    // on click of decline button, close consent manager, return focus if applicable, set cookie and and remove cookies
     const declineBtn = document.querySelector('.cead__btn--decline')
     if (declineBtn) declineBtn.addEventListener('click', () => {
       this.el.removeAttribute('data-show')
       if (this.focus) this.focus.focus()
+      this.setCookie(false)
       this.deactivate()
     })
 
@@ -102,8 +104,6 @@ class Cead {
    * sets cookie to true and replaces attributes on tracking scripts - activating them
    */
   activate() {
-    this.setCookie(true)
-
     const scripts = document.querySelectorAll(`[${this.config.attr}]`);
 
     for (let script of scripts) {
@@ -130,8 +130,6 @@ class Cead {
    * sets cookie to false and removes cookies listed in config.cookies
    */
   deactivate() {
-    this.setCookie(false)
-
     const cookies = document.cookie.split(';');
 
     for (let cookie of cookies) {
