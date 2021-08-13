@@ -4,8 +4,8 @@ class Cead {
     this.config = {
       default: false,
       cookie: 'cead',
-      attribute: 'data-cead',
-      srcAttribute: 'data-src',
+      attr: 'data-cead',
+      srcAttr: 'data-src',
       link: '#cead',
       cookies: [],
 
@@ -28,12 +28,15 @@ class Cead {
    */
   init() {
     // get current cookie state
-    const cookie = this.getCookie(this.config.name)
+    const cookie = this.getCookie(this.config.cookie)
 
     // if cookie is not set, show consent manager
     if (!cookie) {
-      this.el.setattr('data-show', 'true')
+      this.el.setAttribute('data-show', 'true')
     }
+
+    // trigger ready
+    this.ready()
 
     // when readyState is interactive, the DOM has finished loading but resources haven't necessarily loaded
     // similar to DOMContentLoaded, but doesn't wait for syncronous scripts
@@ -47,7 +50,7 @@ class Cead {
     // on click of accept button, close consent manager, return focus if applicable and activate tracking
     const acceptBtn = document.querySelector('.cead__btn--accept')
     if (acceptBtn) acceptBtn.addEventListener('click', () => {
-      this.el.removeattr('data-show')
+      this.el.removeAttribute('data-show')
       if (this.focus) this.focus.focus()
       this.activate()
     })
@@ -55,7 +58,7 @@ class Cead {
     // on click of decline button, close consent manager, return focus if applicable and remove cookies
     const declineBtn = document.querySelector('.cead__btn--decline')
     if (declineBtn) declineBtn.addEventListener('click', () => {
-      this.el.removeattr('data-show')
+      this.el.removeAttribute('data-show')
       if (this.focus) this.focus.focus()
       this.deactivate()
     })
@@ -70,7 +73,7 @@ class Cead {
    * when ready, check cookie and activate tracking if applicable
    */
   ready() {
-    const cookie = this.getCookie(this.config.name)
+    const cookie = this.getCookie(this.config.cookie)
 
     const state = this.config.default
       ? cookie !== 'false'
@@ -107,16 +110,16 @@ class Cead {
       // inline scripts don't have `src` or `data-src` attributes
       // instead we copy the script, replace the text/plain type attribute
       // and then replace the original - triggering it to run
-      if (!script.hasattr('src') && !script.hasattr(this.config.srcAttr)) {
+      if (!script.hasAttribute('src') && !script.hasAttribute(this.config.srcAttr)) {
         const copy = script.cloneNode(true);
-        copy.setattr('type', 'text/javascript');
+        copy.setAttribute('type', 'text/javascript');
         script.after(copy);
         script.remove();
 
       // external scripts
       // set src attribute to what is specified in data-src
       } else {
-        script.setattr('src', script.getattr(this.config.srcAttr));
+        script.setAttribute('src', script.getAttribute(this.config.srcAttr));
       }
     }
   }
@@ -153,7 +156,7 @@ class Cead {
   setCookie(status) {
     let expiry = new Date();
     expiry.setFullYear(expiry.getFullYear() + 1);
-    document.cookie = `${this.config.name}=${status}; path=/; domain=.${document.domain}; Expires=${expiry.toUTCString()};`;
+    document.cookie = `${this.config.cookie}=${status}; path=/; domain=.${document.domain}; Expires=${expiry.toUTCString()};`;
   }
 
   /**
@@ -169,7 +172,7 @@ class Cead {
         e.preventDefault()
         this.focus = document.activeel
 
-        this.el.setattr('data-show', 'true')
+        this.el.setAttribute('data-show', 'true')
         this.el.focus()
       })
     })
