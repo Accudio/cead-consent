@@ -3,7 +3,7 @@
 Cead is a cookie and tracking consent manager that is extremely simple and lightweight. It is designed to help websites implement a simple Accept or Deny dialog that will actually enable or disable tracking.
 
 Many websites implement a notice that doesn't allow opt-out, some offer an option that does nothing, whilst others only offer an opt-out solution - conveniently after they've collected all of your data.
-Caed helps you fix this, allowing you to meet your privacy obligations with little effort or code. In opt-in mode, tracking scripts won't even run until consent is given. In opt-out mode withdrawing consent will clear tracking cookies entirely.
+Cead helps you fix this, allowing you to meet your privacy obligations with little effort or code. In opt-in mode, tracking scripts won't even run until consent is given. In opt-out mode withdrawing consent will clear tracking cookies entirely.
 
 Cead is primarily created in response an increase in unsolicited web surveillance, but also to assist with meeting the standards of regulation including the EU GDPR &amp; ePrivacy and California's CCPA. As privacy legislation becomes more strict it's important that solutions offer compliant opt-in and opt-out controls which Cead offers at it's core.
 
@@ -43,8 +43,8 @@ Cead is primarily created in response an increase in unsolicited web surveillanc
 
 ## Installation
 
-The easiest way to install Cead is to link to the [browser.js](https://github.com/Accudio/caed-consent/blob/main/dist/browser.js) script and [cead.css](https://github.com/Accudio/caed-consent/blob/main/dist/cead.css) stylesheet, and include the required HTML manually in your document.
-You can download them from the [dist/](https://github.com/Accudio/caed-consent/blob/main/dist/) folder of the repo or you can use an asset CDN like [JSDelivr](https://www.jsdelivr.com).
+The easiest way to install Cead is to link to the [browser.js](https://github.com/Accudio/cead-consent/blob/main/dist/browser.js) script and [cead.css](https://github.com/Accudio/cead-consent/blob/main/dist/cead.css) stylesheet, and include the required HTML manually in your document.
+You can download them from the [dist/](https://github.com/Accudio/cead-consent/blob/main/dist/) folder of the repo or you can use an asset CDN like [JSDelivr](https://www.jsdelivr.com).
 
 ```html
 <html>
@@ -117,7 +117,7 @@ Cead manages tracking scripts and images by modifying their code slightly so the
 Change the `src` attribute to `data-src` and add the consent attribute.
 
 ```html
-<script data-src="https://example.com/tracking.js" data-caed></script>
+<script data-src="https://example.com/tracking.js" data-cead></script>
 ```
 
 ### Inline scripts
@@ -125,7 +125,7 @@ Change the `src` attribute to `data-src` and add the consent attribute.
 Add `type="text/plain"` to the `script` tag and add the consent attribute.
 
 ```html
-<script type="text/plain" data-caed>
+<script type="text/plain" data-cead>
   console.log('inline tracking script');
 </script>
 ```
@@ -135,7 +135,7 @@ Add `type="text/plain"` to the `script` tag and add the consent attribute.
 Change the `src` attribute to `data-src` and add the consent attribute. If this is a tracking pixel that shouldn't be displayed `display:none` will prevent a missing image icon. If this is to be displayed you can show/hide the image with css as below:
 
 ```html
-<img data-src="https://example.com/tracking.jpg" data-caed alt="" class="display:none">
+<img data-src="https://example.com/tracking.jpg" data-cead alt="" class="display:none">
 ```
 ```css
 img[data-cead]:not([src]) {
@@ -180,7 +180,7 @@ All options available:
 ## Examples
 
 Here are some of the major analytics/tracking scripts modified to work with Cead using default options. These are based on the provided code at time of writing but may change.
-You should be able to modify any tracking script and image to a format Cead will be able to control. If you have any problems doing so [file an Issue](https://github.com/Accudio/caed-consent/issues/new) and I can take a look.
+You should be able to modify any tracking script and image to a format Cead will be able to control. If you have any problems doing so [file an Issue](https://github.com/Accudio/cead-consent/issues/new) and I can take a look.
 
 ### Google Analytics (gtag.js)
 

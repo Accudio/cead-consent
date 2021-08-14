@@ -6,16 +6,16 @@
   <title>Sample Document</title>
 
   <!-- inline tracking script -->
-  <script type="text/plain" data-caed>
+  <script type="text/plain" data-cead>
     console.log('inline tracking script');
   </script>
 
   <!-- external tracking script -->
-  <script data-src="https://example.com/tracking.js" data-caed></script>
+  <script data-src="https://example.com/tracking.js" data-cead></script>
 </head>
 <body>
   <!-- image tracking pixel -->
-  <img data-src="https://example.com/tracking.jpg" data-caed alt="" class="display:none">
+  <img data-src="https://example.com/tracking.jpg" data-cead alt="" class="display:none">
 
   <!-- if you use a skip link it will go here -->
 
@@ -34,7 +34,7 @@
 
   <!-- including browser package (simple) -->
   <script>
-    window.caed = {
+    window.cead = {
       cookieName: 'consent'
     };
   </script>
@@ -42,8 +42,8 @@
 
   <!-- importing using ES6 module (advanced) -->
   <script type="module">
-    import Caed from 'dist/module.js';
-    new Caed({
+    import Cead from 'dist/module.js';
+    new Cead({
       cookieName: 'consent'
     });
   </script>
