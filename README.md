@@ -9,9 +9,16 @@ Cead is primarily created in response an increase in unsolicited web surveillanc
 
 *Note:* I am not a lawyer, and Cead isn't a magic fix for privacy compliance. When implemented correctly it meets commonly-understood privacy standards, but you may need legal advice for your specific usecase.
 
+## Features
+
+- ***Simple*** — Most sites don't need a fancy system with different purposes, just a simple opt-in/opt-out that can be used for all tracking and cookies;
+- ***Lightweight*** — Weighs in at just xxxkB minified and xxxkB gzip;
+- ***Flexible*** — HTML is provided by you so all text and classes are fully configurable, with lots of options on attributes, cookie name and mode in the JavaScript;
+- ***Standalone*** — Entirely self-contained, Cead doesn't link with any complex external system or have hundreds of dependencies;
+- ***Open Source*** — Free to use, modify and extend as you'd like! Licensed under the permissive Apache-2.0 license.
+
 ## Table of Contents
 
-1. [Features](#features)
 1. [Installation](#installation)
    1. [NPM Install](#npm-install-and-import-advanced)
 1. [Managing tracking scripts and images](#managing-tracking-scripts-and-images)
@@ -31,14 +38,6 @@ Cead is primarily created in response an increase in unsolicited web surveillanc
    1. [Plausible Analytics](#plausible-analytics)
 1. [Changelog](#changelog)
 1. [License, Copyright and Credits](#license-copyright-and-credits)
-
-## Features
-
-- ***Simple*** — Most sites don't need a fancy system with different purposes, just a simple opt-in/opt-out that can be used for all tracking and cookies;
-- ***Lightweight*** — Weighs in at just xxxkB minified and xxxkB gzip;
-- ***Flexible*** — HTML is provided by you so all text and classes are fully configurable, with lots of options on attributes, cookie name and mode in the JavaScript;
-- ***Standalone*** — Entirely self-contained, Cead doesn't link with any complex external system or have hundreds of dependencies;
-- ***Open Source*** — Free to use, modify and extend as you'd like! Licensed under the permissive Apache-2.0 license.
 
 ## Installation
 
