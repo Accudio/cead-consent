@@ -42,13 +42,14 @@ Cead is primarily created in response an increase in unsolicited web surveillanc
 ## Installation
 
 The easiest way to install Cead is to link to the [browser.js](https://github.com/Accudio/cead-consent/blob/main/dist/browser.js) script and [cead.css](https://github.com/Accudio/cead-consent/blob/main/dist/cead.css) stylesheet, and include the required HTML manually in your document.
-You can download them from the [dist/](https://github.com/Accudio/cead-consent/blob/main/dist/) folder of the repo or you can use an asset CDN like [JSDelivr](https://www.jsdelivr.com).
+You can download them from the [dist/](https://github.com/Accudio/cead-consent/blob/main/dist/) folder of the repo or you can use an asset CDN like [JSDelivr](https://www.jsdelivr.com) as below.
 
 ```html
 <html>
   <head>
     <!-- include the CSS in the <head> of your html -->
     <link rel="stylesheet" href="/cead.css">
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cead-consent@1/dist/cead.css">-->
   </head>
 
   <body>
@@ -72,13 +73,14 @@ You can download them from the [dist/](https://github.com/Accudio/cead-consent/b
     </script>
     <!-- include the browser.js file before the closing </body> -->
     <script src="/browser.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/cead-consent@1/dist/browser.js"></script>-->
   </body>
 </html>
 ```
 
 ### NPM Install and Import (advanced)
 
-Cead can also be installed via NPM and imported via your build tool.
+Cead can also be [installed via NPM](https://www.npmjs.com/package/cead-consent) and imported via your build tool.
 
 ```bash
 npm install cead-consent
