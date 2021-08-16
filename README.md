@@ -26,6 +26,7 @@ Cead is primarily created in response an increase in unsolicited web surveillanc
    1. [Inline Scripts](#inline-scripts)
    1. [Image Pixels](#image-pixels)
 1. [Managing Cookies](#managing-cookies)
+1. [Events](#events)
 1. [Options](#options)
 1. [Examples](#examples)
    1. [Google Analytics (gtag.js)](#google-analytics-gtagjs)
@@ -160,6 +161,31 @@ window.cead = {
   ]
 }
 </script>
+```
+
+## Events
+
+For more advanced use-cases you can use Cead's global events to get the tracking state and to watch for changes.
+
+All events provide a `status` property on the event detail which will be true or false depending on the consent status.
+
+Events available:
+
+- `cead:ready` — On initialisation of Cead, after activate/deactivate functionality
+- `cead:change` — On click of either the accept or decline button
+
+Example implementation:
+
+```js
+// watch for ready
+window.addEventListener('cead:ready', e => {
+  console.log('cead ready. status:', e.detail.status)
+})
+
+// on click
+window.addEventListener('cead:change', e => {
+  console.log('cead change. new status:', e.detail.status)
+})
 ```
 
 ## Options
@@ -326,9 +352,10 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 ## Changelog
 
-- 1.0.1 &mdash; Readme and docs update
-- 1.0.0 &mdash; First stable release and npm publish
-- 0.1.0 &mdash; Initial development version (August 2021)
+- 1.1.0 — Adds custom events, making it a little easier for advanced integrations
+- 1.0.1 — Readme and docs update
+- 1.0.0 — First stable release and npm publish
+- 0.1.0 — Initial development version (August 2021)
 
 ## License, Copyright and Credits
 
