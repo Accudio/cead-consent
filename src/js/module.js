@@ -47,23 +47,13 @@ class Cead {
       }
     }
 
-    // on click of accept button, close consent manager, return focus if applicable, set cookie and activate tracking
+    // on click of accept button, trigger accept function
     const acceptBtn = document.querySelector('.cead__btn--accept')
-    if (acceptBtn) acceptBtn.addEventListener('click', () => {
-      this.el.removeAttribute('data-show')
-      if (this.focus) this.focus.focus()
-      this.setCookie(true)
-      this.activate()
-    })
+    if (acceptBtn) acceptBtn.addEventListener('click', () => this.accept())
 
-    // on click of decline button, close consent manager, return focus if applicable, set cookie and and remove cookies
+    // on click of decline button, trigger accept function
     const declineBtn = document.querySelector('.cead__btn--decline')
-    if (declineBtn) declineBtn.addEventListener('click', () => {
-      this.el.removeAttribute('data-show')
-      if (this.focus) this.focus.focus()
-      this.setCookie(false)
-      this.deactivate()
-    })
+    if (declineBtn) declineBtn.addEventListener('click', () => this.decline())
 
     // add event listener to open consent manager on click of #cead links
     this.links()
@@ -72,7 +62,7 @@ class Cead {
   /**
    * ready
    *
-   * when ready, check cookie and activate tracking if applicable
+   * when ready, check cookie, activate tracking if applicable and fire event
    */
   ready() {
     const cookie = this.getCookie(this.config.cookie)
@@ -84,6 +74,57 @@ class Cead {
     if (state) {
       this.activate()
     }
+
+    // fire event
+    window.dispatchEvent(new CustomEvent('cead:ready', {
+      detail: { status: state }
+    }))
+  }
+
+  /**
+   * accept
+   *
+   * close consent manager,
+   * return focus if applicable,
+   * set cookie,
+   * activate tracking
+   * and fire event
+   */
+  accept() {
+    this.el.removeAttribute('data-show')
+
+    if (this.focus) this.focus.focus()
+
+    this.setCookie(true)
+    this.activate()
+
+    // fire event
+    window.dispatchEvent(new CustomEvent('cead:change', {
+      detail: { status: true }
+    }))
+  }
+
+  /**
+   * decline
+   *
+   * close consent manager,
+   * return focus if applicable,
+   * set cookie,
+   * remove cookies
+   * and fire event
+   */
+  decline() {
+    this.el.removeAttribute('data-show')
+
+    if (this.focus) this.focus.focus()
+
+    this.setCookie(false)
+    this.deactivate()
+
+    // fire event
+    window.dispatchEvent(new CustomEvent('cead:change', {
+      detail: { status: false }
+    }))
   }
 
   /**
