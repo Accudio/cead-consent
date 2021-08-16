@@ -326,6 +326,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 ## Changelog
 
+- 1.0.1 &mdash; Readme and docs update
 - 1.0.0 &mdash; First stable release and npm publish
 - 0.1.0 &mdash; Initial development version (August 2021)
 
