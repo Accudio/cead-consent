@@ -1,6 +1,6 @@
 # Cead Consent Manager
 
-Cead is a cookie and tracking consent manager that is extremely simple and lightweight. It is designed to help websites implement a simple Accept or Deny dialog that will actually enable or disable tracking.
+Cead ([pronounced kee-yed](https://ipa-reader.xyz/?text=kjed%CC%AA%CC%8A%20))is a cookie and tracking consent manager that is extremely simple and lightweight. It is designed to help websites implement a simple Accept or Deny dialog that will actually enable or disable tracking.
 
 Many websites implement a notice that doesn't allow opt-out, some offer an option that does nothing, whilst others only offer an opt-out solution - conveniently after they've collected all of your data.
 Cead helps you fix this, allowing you to meet your privacy obligations with little effort or code. In opt-in mode, tracking scripts won't even run until consent is given. In opt-out mode withdrawing consent will clear tracking cookies entirely.
