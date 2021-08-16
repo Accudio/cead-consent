@@ -12,7 +12,7 @@ Cead is primarily created in response an increase in unsolicited web surveillanc
 ## Features
 
 - ***Simple*** — Most sites don't need a fancy system with different purposes, just a simple opt-in/opt-out that can be used for all tracking and cookies;
-- ***Lightweight*** — Weighs in at just xxxkB minified and xxxkB gzip;
+- ***Lightweight*** — Weighs in at just 3.3kB minified and 1.9kB gzip;
 - ***Flexible*** — HTML is provided by you so all text and classes are fully configurable, with lots of options on attributes, cookie name and mode in the JavaScript;
 - ***Standalone*** — Entirely self-contained, Cead doesn't link with any complex external system or have hundreds of dependencies;
 - ***Open Source*** — Free to use, modify and extend as you'd like! Licensed under the permissive Apache-2.0 license.
