@@ -352,6 +352,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 ## Changelog
 
+- 1.1.1 — Updated README with correct gtag.js example
 - 1.1.0 — Adds custom events, making it a little easier for advanced integrations
 - 1.0.1 — Readme and docs update
 - 1.0.0 — First stable release and npm publish
