@@ -216,15 +216,15 @@ Script Tag:
 
 ```html
 <script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.setAttribute('data-src',g);
-a.setAttribute('data-cead','true');m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://ssl.google-analytics.com/ga.js','ga');
-ga('create', 'GA_MEASUREMENT_ID', 'auto');
-ga('send', 'pageview');
-ga('set', 'anonymizeIp', true);
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments)};
+gtag('js', new Date());
+gtag('config', 'GA_MEASUREMENT_ID', {
+  'send_page_view': true,
+  'anonymize_ip': true
+});
 </script>
+<script async data-src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID" data-cead></script>
 ```
 
 Cookies: `'__utma', '__utmt', '__utmb', '__utmc', '__utmz', '__utmv'`
