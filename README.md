@@ -227,7 +227,7 @@ gtag('config', 'GA_MEASUREMENT_ID', {
 <script async data-src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID" data-cead></script>
 ```
 
-Cookies: `'__utma', '__utmt', '__utmb', '__utmc', '__utmz', '__utmv'`
+Cookies: `'_ga', '_gid'`
 
 ### Google Tag Manager
 
