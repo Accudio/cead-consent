@@ -352,6 +352,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 ## Changelog
 
+- 1.1.2 — Changed default files in `package.json` to fix webpack + jsdelivr support
 - 1.1.1 — Updated README with correct gtag.js example
 - 1.1.0 — Adds custom events, making it a little easier for advanced integrations
 - 1.0.1 — Readme and docs update

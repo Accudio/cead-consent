@@ -1,9 +1,9 @@
 {
   "name": "cead-consent",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A simple, extremely lightweight cookie and tracking consent manager",
-  "main": "dist/module.js",
-  "browser": "dist/browser.js",
+  "main": "dist/browser.js",
+  "module": "dist/module.js",
   "keywords": ["cookie", "consent", "gdpr", "compliance", "ccpa", "privacy"],
   "author": "Alistair Shepherd <alistair@accudio.com>",
   "license": "Apache-2.0",
