@@ -1,6 +1,6 @@
 {
   "name": "cead-consent",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "A simple, extremely lightweight cookie and tracking consent manager",
   "main": "dist/browser.js",
   "module": "dist/module.js",
