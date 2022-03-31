@@ -195,7 +195,7 @@ class Cead {
   setCookie(status) {
     let expiry = new Date();
     expiry.setFullYear(expiry.getFullYear() + 1);
-    document.cookie = `${this.config.cookie}=${status}; path=/; domain=.${document.domain}; Expires=${expiry.toUTCString()};`;
+    document.cookie = `${this.config.cookie}=${status}; path=/; domain=.${document.domain}; Expires=${expiry.toUTCString()}; SameSite=Lax`;
   }
 
   /**
