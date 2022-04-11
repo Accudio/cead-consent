@@ -17,6 +17,8 @@ Cead is primarily created in response an increase in unsolicited web surveillanc
 - ***Standalone*** — Entirely self-contained, Cead doesn't link with any complex external system or have hundreds of dependencies;
 - ***Open Source*** — Free to use, modify and extend as you'd like! Licensed under the permissive Apache-2.0 license.
 
+I wrote a blog post giving an [introduction to and basic tutorial getting started with Cead Consent](https://alistairshepherd.uk/writing/cead-consent/).
+
 ## Table of Contents
 
 1. [Installation](#installation)
