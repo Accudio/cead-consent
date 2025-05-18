@@ -178,13 +178,8 @@ class Cead {
       const name = cookie.match('\\s*(.*?)\\s*=.*')?.[1] || 'none';
       // Check cookie name against config.cookies array which may contain regex strings
       const matches = this.config.cookies.some(pattern => {
-        try {
-          const regex = new RegExp(pattern);
-          return regex.test(name);
-        } catch (e) {
-          // If pattern is not a valid regex, do exact match
-          return pattern === name;
-        }
+        return (typeof pattern === 'string' && pattern === name) 
+          || (typeof pattern === 'object' && pattern instanceof RegExp && pattern.test(name));
       });
 
       if (matches) {

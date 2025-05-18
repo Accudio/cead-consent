@@ -148,9 +148,9 @@ img[data-cead]:not([src]) {
 
 ## Managing Cookies
 
-When initialising Cead, you can provide the `cookies` option, in the form of an array of cookie names. On opt-out, these cookies will be removed, making it more difficult for trackers to link user sessions.
+When initializing Cead, you can provide the `cookies` option as an array of cookie names or RegExp objects. On opt-out, Cead will automatically remove these cookies, preventing trackers from linking user sessions across visits.
 
-An example using Google Analytics and Facebook pixel:
+Example configuration for Google Analytics and Facebook pixel cookies:
 
 ```html
 <script>
@@ -158,8 +158,7 @@ window.cead = {
   cookies: [
     '_ga',
     '_gid',
-    '_fbp',
-    '_fbc'
+    new RegExp('^_fb') // matches all cookies starting with _fb
   ]
 }
 </script>
