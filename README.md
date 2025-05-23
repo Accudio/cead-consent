@@ -352,7 +352,8 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 ## Changelog
 
-- 1.1.4 - Added `SameSite=Lax` to Cead cookie
+- 1.1.5 — Enhance cookie removal logic to support regex patterns in config.cookies ([PR #6](https://github.com/Accudio/cead-consent/pull/6) by @rozhnev)
+- 1.1.4 — Added `SameSite=Lax` to Cead cookie
 - 1.1.3 — Changed `dependencies` for `devDependencies` to prevent unnecessary installs when installed in another project
 - 1.1.2 — Changed default files in `package.json` to fix webpack + jsdelivr support
 - 1.1.1 — Updated README with correct gtag.js example
