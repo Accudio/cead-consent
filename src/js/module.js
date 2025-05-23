@@ -176,8 +176,13 @@ class Cead {
     for (let cookie of cookies) {
       // check if this is a cookie that should be removed
       const name = cookie.match('\\s*(.*?)\\s*=.*')?.[1] || 'none';
+      // Check cookie name against config.cookies array which may contain regex strings
+      const matches = this.config.cookies.some(pattern => {
+        return (typeof pattern === 'string' && pattern === name) 
+          || (typeof pattern === 'object' && pattern instanceof RegExp && pattern.test(name));
+      });
 
-      if (this.config.cookies.includes(name)) {
+      if (matches) {
         // some scripts use domain.com, some use .domain.com
         document.cookie = name + '=; path=/; domain='+ document.domain + '; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
         document.cookie = name + '=; path=/; domain=.'+ document.domain + '; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
