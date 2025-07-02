@@ -58,7 +58,15 @@ class Cead {
     // add event listener to open consent manager on click of #cead links
     this.links()
   }
-
+  /**
+   * Toggles the 'data-show' attribute on the consent element.
+   * If 'data-show' is set to 'true', it will be set to 'false', and vice versa.
+   * This controls the visibility state of the consent banner.
+   */
+  toggleBanner() {
+    // toggle the data-show attribute on the consent element
+    this.el.setAttribute('data-show', !(this.el.hasAttribute('data-show') && this.el.getAttribute('data-show') === 'true'));
+  }
   /**
    * ready
    *

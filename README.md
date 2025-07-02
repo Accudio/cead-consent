@@ -188,6 +188,21 @@ window.addEventListener('cead:change', e => {
 })
 ```
 
+## Public Methods
+
+Cead exposes several methods on the `window.ceadConsent` object for advanced integrations. For example, you can programmatically open or close the consent banner using the `toggleBanner` method.
+
+### `toggleBanner()`
+
+Toggles the visibility of the consent banner. If the banner is currently visible, it will be hidden; if hidden, it will be shown.
+
+**Example:**
+```js
+window.ceadConsent.toggleBanner();
+```
+
+This can be useful if you want to provide users with a way to reopen the consent dialog from a menu or footer link.
+
 ## Options
 
 For the browser version, options are set on `window.cead` before loading the script. For the npm version, pass an options object in when calling `new Cead({})`.
@@ -352,8 +367,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 ## Changelog
 
-- 1.1.5 — Enhance cookie removal logic to support regex patterns in config.cookies ([PR #6](https://github.com/Accudio/cead-consent/pull/6) by @rozhnev)
-- 1.1.4 — Added `SameSite=Lax` to Cead cookie
+- 1.1.4 - Added `SameSite=Lax` to Cead cookie
 - 1.1.3 — Changed `dependencies` for `devDependencies` to prevent unnecessary installs when installed in another project
 - 1.1.2 — Changed default files in `package.json` to fix webpack + jsdelivr support
 - 1.1.1 — Updated README with correct gtag.js example
