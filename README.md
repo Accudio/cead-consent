@@ -188,6 +188,29 @@ window.addEventListener('cead:change', e => {
 })
 ```
 
+## Public Methods
+
+Cead exposes several methods on the `window.ceadConsent` object for advanced integrations. For example, you can programmatically open or close the consent banner using the `toggleBanner` method.
+
+### `toggleBanner()`
+
+Toggles the visibility of the consent banner. If the banner is currently visible, it will be hidden; if hidden, it will be shown.
+
+**Example:**
+```js
+window.ceadConsent.toggleBanner();
+```
+**Toggle Button Example:**
+```html
+<!-- Example: Cookie button that toggles the consent banner -->
+<button id="cookie-toggle-btn" aria-label="Show cookie consent" onClick="window.ceadConsent.toggleBanner();">
+  <!-- You can use an SVG icon here if you like -->
+  🍪 Cookie Settings
+</button>
+```
+
+This can be useful if you want to provide users with a way to reopen the consent dialog from a menu or footer link.
+
 ## Options
 
 For the browser version, options are set on `window.cead` before loading the script. For the npm version, pass an options object in when calling `new Cead({})`.

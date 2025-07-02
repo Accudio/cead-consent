@@ -1,2 +1,3 @@
 import Cead from './module.js'
-new Cead(window.cead || {})
+const ceadConsent = new Cead(window.cead || {})
+window.ceadConsent = ceadConsent
